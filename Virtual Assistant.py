@@ -18,7 +18,7 @@ engine.setProperty('rate', 150)
 print(type(engine))
 print(engine)
 
-def speak(audio): #to speak. Text to Speech
+def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 def wishMe():
@@ -26,7 +26,7 @@ def wishMe():
     minute= int(datetime.datetime.now().minute)
     if (hour>=0 and hour<12):
         print("Good Morning sir!")
-        speak("Good Morning sir!")     #Text to Speech
+        speak("Good Morning sir!")     
     elif(hour>=12 and hour<18):
         print("Good afternoon sir!")
         speak("Good afternoon sir!")
@@ -52,15 +52,15 @@ def tellDay():
         qr.make()
         qr.save("qr-code.png")
 
-def takeCommand(): #it takes microphone input from the user and return the string output
-     r=sr.Recognizer()    #recogniser class helps in recognising the audio
+def takeCommand(): 
+     r=sr.Recognizer()   
      with sr.Microphone() as source:
          print("please tell me your query")
          speak("please tell me your query")
          print("Listening...")
-         r.pause_threshold = 0.5 #it refers to the amount of time gap after which the audio is supposed to be complete
+         r.pause_threshold = 0.5 
          r.energy_threshold =300
-         audio=r.listen(source)#digitaldata of whatsoever hs been spoken will be stored in audio
+         audio=r.listen(source)
      try:
       print("Recognising...")
       query=r.recognize_google(audio,language="en-in")
@@ -150,13 +150,7 @@ if 1:
         speak("Opening please wait")
         print("Opening please wait")
         webbrowser.open("https://enquiry.indianrail.gov.in/mntes/")
-    elif ' group members name' in query:
-        print("Nikhil")
-        print("Piyush")
-        print("Abhishek")
-        speak("Nikhil")
-        speak("Piyush")
-        speak("Abhishek")
+   
     elif 'food' in query:
         speak("did you want to eat something")
         print("did you want to eat something")
@@ -176,8 +170,7 @@ if 1:
                 print("ok sir please wait a second")
                 webbrowser.open("https://www.swiggy.com/")
             else:speak("please select anyone.")
-        # elif 'no' in query:
-        #     speak("ok sir no problem")
+      
         else:speak(" sir please tell me yes or no and restart the program")
     elif 'open map' in query:
         speak("opening map please wait")
@@ -253,5 +246,5 @@ if 1:
         webbrowser.open("https://www.india.gov.in/help")
     exit()
 
-"+918931034828"
+
                                                                                                                                                                                                                                                                                                                                                                                                         
